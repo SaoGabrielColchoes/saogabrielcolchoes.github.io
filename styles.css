@@ -801,3 +801,20 @@ a {
     }
 }
       
+/* CORREÇÃO FINAL DO BOTÃO WHATSAPP */
+.whatsapp-float {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+}
+
+.whatsapp-float .whatsapp-icon {
+    font-size: 24px !important;
+    display: inline-block !important;
+}
+
+.whatsapp-float .whatsapp-icon::before {
+    content: "☎" !important;
+    color: white !important;
+}
