@@ -824,4 +824,9 @@ a {
     opacity: 1 !important;
 }
 
+        /* CLAREAR FOTO PRINCIPAL DA LOJA */
+.hero-store::before {
+    background: rgba(4, 19, 51, 0.30) !important;
+}
+
 
