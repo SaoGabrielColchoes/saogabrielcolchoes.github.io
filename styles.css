@@ -814,7 +814,4 @@ a {
     display: inline-block !important;
 }
 
-.whatsapp-float .whatsapp-icon::before {
-    content: "☎" !important;
-    color: white !important;
-}
+
