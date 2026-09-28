@@ -835,4 +835,22 @@ a {
    max-width: 520px !important;
 }
 
+        /* AJUSTE DEFINITIVO DA FOTO PRINCIPAL */
+
+.hero-store::before {
+    background: rgba(4, 19, 51, 0.02) !important;
+}
+
+.hero-store .hero-content h1 {
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    max-width: 470px !important;
+    margin-bottom: 14px !important;
+}
+
+.hero-store .hero-content p {
+    font-size: 17px !important;
+    max-width: 520px !important;
+}
+
 
