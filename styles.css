@@ -824,9 +824,15 @@ a {
     opacity: 1 !important;
 }
 
-        /* CLAREAR FOTO PRINCIPAL DA LOJA */
+       /* AJUSTE FINAL DA FOTO PRINCIPAL */
 .hero-store::before {
-    background: rgba(4, 19, 51, 0.18) !important;
+    background: rgba(4, 19, 51, 0.08) !important;
+}
+
+.hero-content h1 {
+    font-size: 48px !important;
+    line-height: 1.08 !important;
+    max-width: 650px !important;
 }
 
 
