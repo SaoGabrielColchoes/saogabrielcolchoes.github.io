@@ -830,9 +830,9 @@ a {
 }
 
 .hero-content h1 {
-    font-size: 48px !important;
+    font-size: 38px !important;
     line-height: 1.08 !important;
-    max-width: 650px !important;
+   max-width: 520px !important;
 }
 
 
