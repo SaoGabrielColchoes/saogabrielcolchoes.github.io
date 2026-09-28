@@ -127,12 +127,13 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(4,19,51,.90) 0%,
-        rgba(4,19,51,.70) 45%,
-        rgba(4,19,51,.18) 100%
-    );
+   background: linear-gradient(
+    90deg,
+    rgba(4, 19, 51, .45) 0%,
+    rgba(4, 19, 51, .30) 45%,
+    rgba(4, 19, 51, .05) 100%
+);
+   
 }
 
 .hero-content {
