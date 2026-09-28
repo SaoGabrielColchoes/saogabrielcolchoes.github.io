@@ -809,6 +809,7 @@ a {
     gap: 8px !important;
     white-space: nowrap !important;
     padding: 14px 20px !important;
+    aspect-ratio: auto !important;
 }
 
 .whatsapp-float .whatsapp-icon {
