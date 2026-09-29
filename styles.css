@@ -116,7 +116,7 @@ a {
 .hero-store {
     min-height: 570px;
     background-size: cover;
-    background-position: center;
+    background-position: center 42%;
     position: relative;
     display: flex;
     align-items: center;
