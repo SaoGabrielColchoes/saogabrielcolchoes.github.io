@@ -829,7 +829,7 @@ a {
      
 /* TEXTO ABAIXO DA FOTO PRINCIPAL */
 
-.hero-text-below {
+.hero-text-below .container {
     background: #ffffff;
     padding: 45px 0;
     text-align: center;
