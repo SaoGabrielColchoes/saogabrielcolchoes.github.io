@@ -843,9 +843,9 @@ a {
 }
 
 .hero-store .hero-content h1 {
-    font-size: 34px !important;
+    font-size: 28px !important;
     line-height: 1.12 !important;
-    max-width: 470px !important;
+   max-width: 600px !important;
     margin-bottom: 14px !important;
 }
 
