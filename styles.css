@@ -141,6 +141,7 @@ a {
     z-index: 2;
     color: #ffffff;
     max-width: 650px;
+    transform: translateY(35px);
 }
 
 .badge {
