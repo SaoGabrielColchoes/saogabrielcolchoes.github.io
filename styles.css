@@ -856,7 +856,7 @@ a {
 
         /* CORREÇÃO FINAL DA FOTO PRINCIPAL */
 .hero-store {
-    background-image: url('assets/loja-nova.png') !important;
+    background-image: url('assets/loja.png') !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
