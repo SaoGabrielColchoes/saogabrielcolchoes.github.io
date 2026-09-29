@@ -827,3 +827,25 @@ a {
 }
 
      
+/* TEXTO ABAIXO DA FOTO PRINCIPAL */
+
+.hero-text-below {
+    background: #ffffff;
+    padding: 45px 0;
+    text-align: center;
+}
+
+.hero-text-below h1 {
+    color: #081f4d;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-text-below p {
+    color: #4b5563;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
