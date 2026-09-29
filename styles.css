@@ -854,4 +854,12 @@ a {
     max-width: 520px !important;
 }
 
+        /* CORREÇÃO FINAL DA FOTO PRINCIPAL */
+.hero-store {
+    background-image: url('assets/loja-nova.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
 
