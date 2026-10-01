@@ -61,7 +61,7 @@
         .molas-product-card img {
             display: block;
             width: 100%;
-            max-width: 440px;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
         }
@@ -105,11 +105,11 @@
 
         .product-modal-box {
             position: relative;
-            width: min(1180px, 96vw);
+            width: min(1380px, 98vw);
             max-height: 92vh;
             overflow: auto;
             display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+            grid-template-columns: minmax(0, 2fr) minmax(320px, .75fr);
             gap: 28px;
             background: white;
             border-radius: 18px;
@@ -127,7 +127,7 @@
 
         .product-modal-image img {
             width: 100%;
-            max-width: 660px;
+            max-width: 1000px;
             height: auto;
             object-fit: contain;
         }
@@ -236,7 +236,7 @@
 
                 <article class="molas-product-card">
                     <button class="product-open" type="button" onclick="openProduct('beautyrest')" title="Clique para ver em tamanho grande">
-                        <img src="assets/beautyrest-platinum-aprovado.webp"
+                        <img src="assets/beautyrest-platinum-hd.webp"
                              alt="Simmons Beautyrest Platinum Experience com informações técnicas">
                     </button>
                     <div class="molas-product-caption">
@@ -255,7 +255,7 @@
 
                 <article class="molas-product-card">
                     <button class="product-open" type="button" onclick="openProduct('tenerife')" title="Clique para ver em tamanho grande">
-                        <img src="assets/tenerife-aprovado.webp"
+                        <img src="assets/tenerife-neo-hd.webp"
                              alt="Simmons Tenerife bege aprovado com informações técnicas">
                     </button>
                     <div class="molas-product-caption">
@@ -296,7 +296,7 @@
 const products = {
     beautyrest: {
         title: 'Simmons Beautyrest Platinum Experience',
-        image: 'assets/beautyrest-platinum-aprovado.webp',
+        image: 'assets/beautyrest-platinum-hd.webp',
         specs: [
             'Conforto intermediário',
             '35 cm de altura',
@@ -310,7 +310,7 @@ const products = {
     },
     tenerife: {
         title: 'Simmons Tenerife Neo',
-        image: 'assets/tenerife-aprovado.webp',
+        image: 'assets/tenerife-neo-hd.webp',
         specs: [
             'Conforto Extra Firme',
             '28 cm de altura',
