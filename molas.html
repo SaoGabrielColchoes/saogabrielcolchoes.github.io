@@ -108,12 +108,10 @@
             width: min(1380px, 98vw);
             max-height: 92vh;
             overflow: auto;
-            display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(320px, .75fr);
-            gap: 28px;
+            display: block;
             background: white;
             border-radius: 18px;
-            padding: 28px;
+            padding: 12px;
         }
 
         .product-modal-image {
@@ -122,14 +120,21 @@
             justify-content: center;
             background: #f8fafc;
             border-radius: 12px;
-            min-height: 420px;
+            min-height: 0;
+            width: 100%;
         }
 
         .product-modal-image img {
+            display: block;
             width: 100%;
-            max-width: 1000px;
+            max-width: none;
             height: auto;
             object-fit: contain;
+            cursor: zoom-in;
+        }
+
+        .product-modal-info {
+            padding: 18px 24px 12px;
         }
 
         .product-modal-info h3 {
@@ -283,7 +288,7 @@
     <div class="product-modal-box">
         <button class="modal-close" type="button" onclick="closeProduct()" aria-label="Fechar">×</button>
         <div class="product-modal-image">
-            <img id="modalProductImage" src="" alt="">
+            <img id="modalProductImage" src="" alt="" onclick="openFullResolution()" title="Clique para abrir a imagem em resolução máxima">
         </div>
         <div class="product-modal-info">
             <h3 id="modalProductTitle"></h3>
@@ -334,6 +339,11 @@ function openProduct(key) {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+}
+
+function openFullResolution() {
+    const img = document.getElementById('modalProductImage');
+    if (img.src) window.open(img.src, '_blank');
 }
 
 function closeProduct() {
