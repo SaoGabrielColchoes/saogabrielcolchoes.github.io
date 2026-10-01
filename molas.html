@@ -31,6 +31,26 @@
             line-height: 1.6;
             max-width: 750px;
         }
+        .molas-approved-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            padding: 14px;
+            background: #ffffff;
+        }
+
+        .molas-approved-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 760px) {
+            .molas-approved-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -95,27 +115,26 @@
             <div class="categories-grid">
 
                 <div class="category-card">
-                    <div class="category-image">
+
+                    <div class="molas-approved-gallery">
                         <img src="assets/beautyrest-platinum-aprovado.webp"
                              alt="Simmons Beautyrest Platinum Experience">
-                    </div>
-                    <div class="category-content">
-                        <span>SIMMONS BEAUTYREST</span>
-                        <h3>Platinum Experience</h3>
-                        <p>Imagem profissional aprovada do modelo Platinum Experience. Consulte medidas, disponibilidade e condições com nossa equipe.</p>
-                    </div>
-                </div>
 
-                <div class="category-card">
-                    <div class="category-image">
                         <img src="assets/tenerife-aprovado.webp"
                              alt="Colchão Simmons Tenerife bege">
                     </div>
+
                     <div class="category-content">
-                        <span>SIMMONS</span>
-                        <h3>Tenerife</h3>
-                        <p>Modelo Tenerife bege em ambiente profissional. Consulte medidas, disponibilidade e condições com nossa equipe.</p>
+                        <span>COLCHÕES DE MOLAS</span>
+
+                        <h3>Conforto e tecnologia</h3>
+
+                        <p>
+                            Modelos desenvolvidos para oferecer conforto,
+                            sustentação e qualidade para suas noites de sono.
+                        </p>
                     </div>
+
                 </div>
 
             </div>
