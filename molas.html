@@ -31,6 +31,55 @@
             line-height: 1.6;
             max-width: 750px;
         }
+
+        .molas-products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 22px;
+            align-items: start;
+        }
+
+        .molas-product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, .10);
+        }
+
+        .molas-product-card a {
+            display: block;
+            background: #f8fafc;
+        }
+
+        .molas-product-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .molas-product-caption {
+            padding: 15px 18px 18px;
+        }
+
+        .molas-product-caption strong {
+            display: block;
+            color: #172554;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .molas-product-caption span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .molas-products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -92,27 +141,29 @@
                 </p>
             </div>
 
-            <div class="categories-grid">
+            <div class="molas-products-grid">
 
-                <div class="category-card">
-
-                    <div class="category-image">
-                        <img src="assets/platinum-experience.jpeg"
-                             alt="Colchão de molas">
+                <article class="molas-product-card">
+                    <a href="assets/beautyrest-platinum-aprovado.webp" target="_blank" title="Clique para ampliar">
+                        <img src="assets/beautyrest-platinum-aprovado.webp"
+                             alt="Simmons Beautyrest Platinum Experience com informações técnicas">
+                    </a>
+                    <div class="molas-product-caption">
+                        <strong>Simmons Beautyrest Platinum Experience</strong>
+                        <span>Clique na imagem para ampliar e ler todas as informações.</span>
                     </div>
+                </article>
 
-                    <div class="category-content">
-                        <span>COLCHÕES DE MOLAS</span>
-
-                        <h3>Conforto e tecnologia</h3>
-
-                        <p>
-                            Modelos desenvolvidos para oferecer conforto,
-                            sustentação e qualidade para suas noites de sono.
-                        </p>
+                <article class="molas-product-card">
+                    <a href="assets/tenerife-aprovado.webp" target="_blank" title="Clique para ampliar">
+                        <img src="assets/tenerife-aprovado.webp"
+                             alt="Simmons Tenerife bege aprovado com informações técnicas">
+                    </a>
+                    <div class="molas-product-caption">
+                        <strong>Simmons Tenerife</strong>
+                        <span>Clique na imagem para ampliar e ler todas as informações.</span>
                     </div>
-
-                </div>
+                </article>
 
             </div>
 
