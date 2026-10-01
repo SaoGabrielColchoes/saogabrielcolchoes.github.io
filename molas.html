@@ -47,14 +47,21 @@
             box-shadow: 0 10px 28px rgba(15, 23, 42, .10);
         }
 
-        .molas-product-card a {
-            display: block;
+        .molas-product-card .product-open {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background: #f8fafc;
+            padding: 12px;
+            border: 0;
+            width: 100%;
+            cursor: zoom-in;
         }
 
         .molas-product-card img {
             display: block;
             width: 100%;
+            max-width: 440px;
             height: auto;
             object-fit: contain;
         }
@@ -75,10 +82,94 @@
             font-size: 14px;
         }
 
+        .molas-specs {
+            margin: 12px 0 0;
+            padding-left: 20px;
+            color: #334155;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .product-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(2, 6, 23, .88);
+        }
+
+        .product-modal.open { display: flex; }
+
+        .product-modal-box {
+            position: relative;
+            width: min(1180px, 96vw);
+            max-height: 92vh;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+            gap: 28px;
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .product-modal-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border-radius: 12px;
+            min-height: 420px;
+        }
+
+        .product-modal-image img {
+            width: 100%;
+            max-width: 660px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-modal-info h3 {
+            color: #172554;
+            font-size: 28px;
+            margin: 4px 0 16px;
+        }
+
+        .product-modal-info ul {
+            padding-left: 22px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            border: 0;
+            background: #172554;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 25px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
         @media (max-width: 800px) {
             .molas-products-grid {
                 grid-template-columns: 1fr;
             }
+            .product-modal-box {
+                grid-template-columns: 1fr;
+                padding: 22px 16px;
+            }
+            .product-modal-image { min-height: 0; }
+            .product-modal-info ul { font-size: 16px; }
         }
     </style>
 </head>
@@ -144,24 +235,40 @@
             <div class="molas-products-grid">
 
                 <article class="molas-product-card">
-                    <a href="assets/beautyrest-platinum-aprovado.webp" target="_blank" title="Clique para ampliar">
+                    <button class="product-open" type="button" onclick="openProduct('beautyrest')" title="Clique para ver em tamanho grande">
                         <img src="assets/beautyrest-platinum-aprovado.webp"
                              alt="Simmons Beautyrest Platinum Experience com informações técnicas">
-                    </a>
+                    </button>
                     <div class="molas-product-caption">
                         <strong>Simmons Beautyrest Platinum Experience</strong>
-                        <span>Clique na imagem para ampliar e ler todas as informações.</span>
+                        <span>Clique na imagem para abrir em tamanho grande.</span>
+                        <ul class="molas-specs">
+                            <li>Conforto intermediário</li>
+                            <li>35 cm de altura</li>
+                            <li>Látex e Visco Dry Gel</li>
+                            <li>MemoSense® System</li>
+                            <li>Malha de Bamboo</li>
+                            <li>Beautyrest Moderate</li>
+                        </ul>
                     </div>
                 </article>
 
                 <article class="molas-product-card">
-                    <a href="assets/tenerife-aprovado.webp" target="_blank" title="Clique para ampliar">
+                    <button class="product-open" type="button" onclick="openProduct('tenerife')" title="Clique para ver em tamanho grande">
                         <img src="assets/tenerife-aprovado.webp"
                              alt="Simmons Tenerife bege aprovado com informações técnicas">
-                    </a>
+                    </button>
                     <div class="molas-product-caption">
-                        <strong>Simmons Tenerife</strong>
-                        <span>Clique na imagem para ampliar e ler todas as informações.</span>
+                        <strong>Simmons Tenerife Neo</strong>
+                        <span>Clique na imagem para abrir em tamanho grande.</span>
+                        <ul class="molas-specs">
+                            <li>Conforto Extra Firme</li>
+                            <li>28 cm de altura</li>
+                            <li>Molas Posturest LFK 2.2</li>
+                            <li>Espuma de alta densidade</li>
+                            <li>Malha Bamboo Touch</li>
+                            <li>Sistema One Side</li>
+                        </ul>
                     </div>
                 </article>
 
@@ -171,6 +278,78 @@
     </section>
 
 </main>
+
+<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="product-modal-box">
+        <button class="modal-close" type="button" onclick="closeProduct()" aria-label="Fechar">×</button>
+        <div class="product-modal-image">
+            <img id="modalProductImage" src="" alt="">
+        </div>
+        <div class="product-modal-info">
+            <h3 id="modalProductTitle"></h3>
+            <ul id="modalProductSpecs"></ul>
+        </div>
+    </div>
+</div>
+
+<script>
+const products = {
+    beautyrest: {
+        title: 'Simmons Beautyrest Platinum Experience',
+        image: 'assets/beautyrest-platinum-aprovado.webp',
+        specs: [
+            'Conforto intermediário',
+            '35 cm de altura',
+            'Látex',
+            'Visco Dry Gel',
+            'MemoSense® System',
+            'Malha de Bamboo',
+            'Beautyrest Moderate',
+            'Sistema One Side'
+        ]
+    },
+    tenerife: {
+        title: 'Simmons Tenerife Neo',
+        image: 'assets/tenerife-aprovado.webp',
+        specs: [
+            'Conforto Extra Firme',
+            '28 cm de altura',
+            'Molas Posturest LFK 2.2',
+            'Espuma de alta densidade',
+            'Malha Bamboo Touch de toque suave',
+            'Faixa lateral em chenille Lyon Blanc',
+            'Sistema One Side'
+        ]
+    }
+};
+
+function openProduct(key) {
+    const p = products[key];
+    document.getElementById('modalProductImage').src = p.image;
+    document.getElementById('modalProductImage').alt = p.title;
+    document.getElementById('modalProductTitle').textContent = p.title;
+    document.getElementById('modalProductSpecs').innerHTML =
+        p.specs.map(item => '<li>' + item + '</li>').join('');
+    const modal = document.getElementById('productModal');
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProduct() {
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+document.getElementById('productModal').addEventListener('click', function(e) {
+    if (e.target === this) closeProduct();
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeProduct();
+});
+</script>
 
 </body>
 </html>
