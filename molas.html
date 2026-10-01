@@ -108,10 +108,12 @@
             width: min(1380px, 98vw);
             max-height: 92vh;
             overflow: auto;
-            display: block;
+            display: grid;
+            grid-template-columns: minmax(0, 1.55fr) minmax(360px, .75fr);
+            gap: 28px;
             background: white;
             border-radius: 18px;
-            padding: 12px;
+            padding: 24px;
         }
 
         .product-modal-image {
@@ -127,7 +129,7 @@
         .product-modal-image img {
             display: block;
             width: 100%;
-            max-width: none;
+            max-width: 900px;
             height: auto;
             object-fit: contain;
             cursor: zoom-in;
@@ -145,8 +147,8 @@
 
         .product-modal-info ul {
             padding-left: 22px;
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 20px;
+            line-height: 1.85;
             color: #334155;
         }
 
@@ -301,7 +303,7 @@
 const products = {
     beautyrest: {
         title: 'Simmons Beautyrest Platinum Experience',
-        image: 'assets/beautyrest-platinum-hd.webp',
+        image: 'assets/beautyrest-produto.webp',
         specs: [
             'Conforto intermediário',
             '35 cm de altura',
@@ -315,7 +317,7 @@ const products = {
     },
     tenerife: {
         title: 'Simmons Tenerife Neo',
-        image: 'assets/tenerife-neo-hd.webp',
+        image: 'assets/tenerife-produto.webp',
         specs: [
             'Conforto Extra Firme',
             '28 cm de altura',
