@@ -28,5 +28,5 @@
 .product-card:hover .product-media img{transform:scale(.98);filter:contrast(1.08) saturate(1.06)}
 
 /* Cama Box: ampliar somente a imagem deste cartão */
-.product-card:nth-child(3) .product-media img{object-fit:cover;transform:scale(1.18)}
-.product-card:nth-child(3):hover .product-media img{transform:scale(1.22)}
+.product-card:nth-child(3) .product-media img{object-fit:contain;transform:scale(1.06)}
+.product-card:nth-child(3):hover .product-media img{transform:scale(1.10)}
