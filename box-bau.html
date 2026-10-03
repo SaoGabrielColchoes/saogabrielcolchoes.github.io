@@ -19,14 +19,17 @@
         }
 
         .hero .container {
-            max-width: none;
-            padding: 0;
+            max-width: 1180px;
+            padding: 14px 20px;
         }
 
         .box-bau-banner {
-            width: 100%;
+            width: auto;
+            max-width: 100%;
+            height: 260px;
+            object-fit: contain;
             display: block;
-            height: auto;
+            margin: 0 auto;
         }
 
         /* Box Baú: cartões compactos para as fotos dos seis tamanhos */
@@ -59,7 +62,7 @@
         @media (max-width: 600px) {
             .categories-grid { grid-template-columns: 1fr; }
             .category-image { height: 220px; }
-            .box-bau-banner { max-height: 240px; object-fit: contain; object-position: center; }
+            .box-bau-banner { width: 100%; height: auto; max-height: 220px; object-fit: contain; object-position: center; }
         }
     </style>
 </head>
@@ -91,7 +94,7 @@
     <section class="hero">
         <div class="container">
 
-            <img src="assets/box-bau-banner.png?v=20261003-1"
+            <img src="assets/box-bau-banner.png?v=20261003-3"
                  alt="Box Baú - Mais espaço, organização e praticidade para o seu quarto"
                  class="box-bau-banner">
 
