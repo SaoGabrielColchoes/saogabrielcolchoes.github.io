@@ -14,22 +14,19 @@
 
     <style>
         .hero {
-            background: linear-gradient(135deg, #172554, #1e3a8a);
-            color: white;
-            padding: 70px 0;
+            padding: 0;
+            background: #fff;
         }
 
-        .hero h1 {
-            color: white;
-            font-size: 42px;
-            margin-bottom: 18px;
+        .hero .container {
+            max-width: none;
+            padding: 0;
         }
 
-        .hero p {
-            color: white;
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 750px;
+        .box-bau-banner {
+            width: 100%;
+            display: block;
+            height: auto;
         }
 
         /* Box Baú: cartões compactos para as fotos dos seis tamanhos */
@@ -62,6 +59,7 @@
         @media (max-width: 600px) {
             .categories-grid { grid-template-columns: 1fr; }
             .category-image { height: 220px; }
+            .box-bau-banner { min-height: 220px; object-fit: cover; object-position: center; }
         }
     </style>
 </head>
@@ -93,18 +91,9 @@
     <section class="hero">
         <div class="container">
 
-            <div class="hero-content">
-                <h1>Box Baú</h1>
-
-                <p>
-                    Mais espaço, organização e praticidade para o seu quarto.
-                </p>
-
-                <p>
-                    Na São Gabriel Colchões você encontra box baú
-                    em diversos tamanhos para aproveitar melhor cada espaço.
-                </p>
-            </div>
+            <img src="assets/box-bau-banner.png?v=20261003-1"
+                 alt="Box Baú - Mais espaço, organização e praticidade para o seu quarto"
+                 class="box-bau-banner">
 
         </div>
     </section>
