@@ -10,6 +10,9 @@
     <meta name="description"
         content="Colchões de molas em São José dos Campos. São Gabriel Colchões, mais de 30 anos de tradição, conforto e qualidade.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="catalogo.css?v=20261005-1110">
 </head>
 
@@ -21,7 +24,7 @@
         <a href="index.html" class="logo-link">
             <img src="assets/logo.png"
                  alt="São Gabriel Colchões"
-                 class="logo-img">
+                 class="logo-img" loading="lazy" decoding="async">
         </a>
 
         <nav class="nav-menu">
@@ -76,7 +79,7 @@
                 <article class="molas-product-card">
                     <button class="product-open" type="button" onclick="openProduct('beautyrest')" title="Clique para ver em tamanho grande">
                         <img src="assets/beautyrest-platinum-hd.webp"
-                             alt="Simmons Beautyrest Platinum Experience com informações técnicas">
+                             alt="Simmons Beautyrest Platinum Experience com informações técnicas" loading="lazy" decoding="async">
                     </button>
                     <div class="molas-product-caption">
                         <strong>Simmons Beautyrest Platinum Experience</strong>
@@ -95,7 +98,7 @@
                 <article class="molas-product-card">
                     <button class="product-open" type="button" onclick="openProduct('tenerife')" title="Clique para ver em tamanho grande">
                         <img src="assets/tenerife-neo-hd.webp"
-                             alt="Simmons Tenerife bege aprovado com informações técnicas">
+                             alt="Simmons Tenerife bege aprovado com informações técnicas" loading="lazy" decoding="async">
                     </button>
                     <div class="molas-product-caption">
                         <strong>Simmons Tenerife Neo</strong>
@@ -122,7 +125,7 @@
     <div class="product-modal-box">
         <button class="modal-close" type="button" onclick="closeProduct()" aria-label="Fechar">×</button>
         <div class="product-modal-image">
-            <img id="modalProductImage" src="" alt="" onclick="openFullResolution()" title="Clique para abrir a imagem em resolução máxima">
+            <img id="modalProductImage" src="" alt="" onclick="openFullResolution()" title="Clique para abrir a imagem em resolução máxima" loading="lazy" decoding="async">
         </div>
         <div class="product-modal-info">
             <h3 id="modalProductTitle"></h3>
