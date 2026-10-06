@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saogabrielcolchoessjc.com.br/sitemap.xml
